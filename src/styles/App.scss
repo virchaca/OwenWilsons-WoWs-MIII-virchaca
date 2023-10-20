@@ -1,0 +1,33 @@
+
+
+.header {
+    color: green;
+    border-bottom: 1px solid gray;
+    text-align: center;
+}
+
+.img {
+    width: 150px;
+    // text-align: center;
+}
+
+.li{
+    border: 1px solid black;
+    width: fit-content;
+    background-color: rgb(147, 236, 236);
+    
+}
+
+.ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    
+}
+.nameDiv{
+    width: 150px;
+}
+.phrase {
+    width: 150px;
+}
