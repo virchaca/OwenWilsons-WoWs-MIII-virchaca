@@ -7,11 +7,19 @@ const Filters = ({
   handleChangeYear,
   nameFiltered,
   handleChangeInput,
+  moviesYears,
 }) => {
   const handleInput = (ev) => {
     handleChangeInput(ev.target.value);
   };
-
+  const renderYears = () => {
+    return moviesYears.map((year, index) => (
+      <option key={index} value={year}>
+        {" "}
+        {year}
+      </option>
+    ));
+  };
   const handleSelect = (ev) => {
     handleChangeYear(ev.target.value);
   };
@@ -36,10 +44,7 @@ const Filters = ({
             onChange={handleSelect}
           >
             <option value="">All</option>
-            <option value="2004">2004</option>
-            <option value="2008">2008</option>
-            <option value="2011">2011</option>
-            <option value="2004">2004</option>
+            {renderYears()}
           </select>
         </label>
       </form>

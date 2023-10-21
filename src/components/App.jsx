@@ -11,7 +11,7 @@ function App() {
   const [movies, setMovies] = useState([]);
   const [yearFilter, setYearFilter] = useState('');
   const [nameFiltered, setNameFiltered] = useState("");
-
+ 
   useEffect(() => {
     getDataFromApi().then((cleanData) => {
       setMovies(cleanData);
@@ -38,8 +38,12 @@ function App() {
     }
   });
 
-
-console.log(`soy filterMovies ${filteredMovies}`);
+const getMoviesYears = () => {
+  const moviesYears= movies.map(movie=>movie.year);
+  const uniqueYear = new Set(moviesYears);
+  const uniqueYearsArray = [...uniqueYear]
+  return uniqueYearsArray
+} 
   // console.log(movies)
   return (
     <>
@@ -52,6 +56,7 @@ console.log(`soy filterMovies ${filteredMovies}`);
         handleChangeYear={handleChangeYear}
         handleChangeInput={handleChangeInput} 
         nameFiltered={nameFiltered} 
+        moviesYears={getMoviesYears()}
         />
       </header>
       <main>
