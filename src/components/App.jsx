@@ -18,7 +18,7 @@ function App() {
     });
   }, []);
   const handleChangeYear = (value) => {
-    setYearFilter(value);
+    setYearFilter (parseInt(value));
   };
 
   
@@ -30,11 +30,11 @@ function App() {
   const filteredMovies = movies
   .filter((movie) => 
     movie.phrase.toLowerCase().includes(nameFiltered))
-  .filter((item) => {
+  .filter((movie) => {
     if (yearFilter === '') {
       return true;
     } else {
-      return yearFilter === item.year;
+      return yearFilter === movie.year;
     }
   });
 
