@@ -1,13 +1,14 @@
-import SingleMovie from "./SingleMovie";
+import MovieSceneItem from "./MovieSceneItem";
 import '../styles/App.scss'
+// import PropTypes from 'prop-types'
 
 // import React from 'react'
 
-const MoviesList = ({ movies }) => {
+const MovieSceneList = ({ movies }) => {
   const renderMovies = movies.map((movie) => {
     return (
       <li className="li" key={movie.id}>
-        <SingleMovie movie={movie} />
+        <MovieSceneItem movie={movie} />
       </li>
     );
   });
@@ -18,4 +19,8 @@ const MoviesList = ({ movies }) => {
   );
 };
 
-export default MoviesList;
+// MovieSceneList.propTypes = {
+//   movies: PropTypes.object, 
+// }
+
+export default MovieSceneList;
