@@ -15,6 +15,7 @@ const getDataFromAPI = () => {
             name: movie.movie,           
             year: movie.year,
             phrase: movie.full_line,
+            audio: movie.audio,
           };
         });
         return cleanData;

@@ -25,28 +25,31 @@ const Filters = ({
   };
   return (
     <div className="divForm">
-      <form>
-        <label htmlFor="search_name">Movie </label>
-        <input
-          type="text"
-          name="search_name"
-          id="search_name"
-          value={nameFiltered}
-          onChange={handleInput}
-        />
-
-        <label htmlFor="search_year">
-          Year
-          <select
-            name="search_year"
-            id="search_year"
-            value={yearFilter}
-            onChange={handleSelect}
-          >
-            <option value="">All</option>
-            {renderYears()}
-          </select>
-        </label>
+      <form className="formContainer">
+        <div className="inputContainer">
+          <label htmlFor="search_name">Movie </label>
+          <input
+            type="text"
+            name="search_name"
+            id="search_name"
+            value={nameFiltered}
+            onChange={handleInput}
+          />
+        </div>
+        <div className="inputContainer">
+          <label htmlFor="search_year">
+            Year
+            <select
+              name="search_year"
+              id="search_year"
+              value={yearFilter}
+              onChange={handleSelect}
+            >
+              <option value="">All</option>
+              {renderYears()}
+            </select>
+          </label>
+        </div>
       </form>
     </div>
   );

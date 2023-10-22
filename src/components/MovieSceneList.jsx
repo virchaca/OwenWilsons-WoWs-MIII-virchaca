@@ -1,15 +1,18 @@
 import MovieSceneItem from "./MovieSceneItem";
-import '../styles/App.scss'
+import "../styles/App.scss";
+import { Link } from "react-router-dom";
 // import PropTypes from 'prop-types'
 
-// import React from 'react'
+import React from "react";
 
 const MovieSceneList = ({ movies }) => {
   const renderMovies = movies.map((movie) => {
     return (
-      <li className="li" key={movie.id}>
-        <MovieSceneItem movie={movie} />
-      </li>
+      <Link to={"/movie/" + movie.id} className="linkMovie">
+        <li className="li" key={movie.id}>
+          <MovieSceneItem movie={movie} />
+        </li>
+      </Link>
     );
   });
   return (
@@ -20,7 +23,7 @@ const MovieSceneList = ({ movies }) => {
 };
 
 // MovieSceneList.propTypes = {
-//   movies: PropTypes.object, 
+//   movies: PropTypes.object,
 // }
 
 export default MovieSceneList;
