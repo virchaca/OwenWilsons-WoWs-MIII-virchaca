@@ -1,22 +1,35 @@
 * {
   margin: 0;
   padding: 0;  
+  
 }
 .header {
-  color: rgb(104, 7, 7);
+  margin-top: 20px;
+  color:rgb(111, 111, 148);
   border-bottom: 2px solid rgb(104, 7, 7);
   text-align: center;
   margin-bottom: 30px;
-  background-color: lightslategrey;
+  background-color: black;
+  background-image: url(../images/back.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100px;
+  padding-top: 60px;
+  background-size: cover;
+  .title{
+    background-color: black;
+    width: fit-content;
+    margin: 0 auto;
+  }
 }
 
-body {
-  background-color: lightslategrey;
+body {   
+  background-color: black; 
 }
+
 .ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
   list-style: none;
   justify-content: center;
   .img {
@@ -27,9 +40,15 @@ body {
   .li {
     border: 2px solid rgb(104, 7, 7);
     width: 220px;
-    background-color: rgb(29, 100, 100);
+    background-color: rgb(49, 14, 70);
+    // background-color: rgb(94, 48, 94);  
+    background-color: rgb(10, 37, 10);  
     text-align: center;
     border-radius: 25px;
+    margin: 30px;
+    @media screen and (max-width: 420px) {
+      margin: 15px;       
+    }
   }
   .linkMovie {
     text-decoration: none;
@@ -38,7 +57,7 @@ body {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: rgb(104, 7, 7);
+    color: green;
     flex-grow: 1;
     display: flex;
     justify-content: center;
@@ -56,10 +75,13 @@ body {
 .divForm {
   text-align: center;
   color: rgb(104, 7, 7);
+  
   .formContainer {
+    
     display: flex;
     justify-content: center;
     align-items: center;
+    
     @media screen and (max-width: 420px) {
       display: flex;
       flex-direction: column;
@@ -72,12 +94,14 @@ body {
 
   .inputContainer {
     margin-right: 20px;
-    font-weight: bold;
+    font-weight: bold; border: 1px solid rgb(104, 7, 7);
+    padding: 10px;
+    margin-bottom: 20px;
   }
   .inputContainer input,
   select {
-    margin-inline: 10px;
-    margin-bottom: 10px;
+    border: 1px solid rgb(104, 7, 7);
+    margin-inline: 10px;   
   }
 }
 
@@ -88,7 +112,9 @@ body {
   padding-block: 10px;
   width: 500px;
   height: 400px;
-  background-color: rgb(94, 48, 94);
+  // background-color: rgb(94, 48, 94);
+  background-color: rgb(111, 111, 148);
+  border: 5px solid rgb(104, 7, 7);
   margin: 0 auto;
   align-items: center;
   @media screen and (max-width: 420px) {
@@ -108,7 +134,7 @@ body {
     display: flex;
     flex-direction: column;
     text-align: center;
-    justify-content: center;
+    justify-content: center;    
     .detailNameDiv {
       color: white;
       font-size: 40px;
@@ -123,14 +149,15 @@ body {
     }
     .detailDirector {
       font-size: 30px;
-      color: gray;
+      color: darkslategrey;
       @media screen and (max-width: 420px) {
         font-size: 20px;       
       }
     }
     .detailPhrase {
       font-size: 30px;
-      color: gray;
+      color: darkslategray;
+      font-weight: bold;
       @media screen and (max-width: 420px) {
         font-size: 20px;       
       }

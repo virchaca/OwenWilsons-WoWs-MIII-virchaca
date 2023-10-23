@@ -81,7 +81,7 @@ function App() {
     <>
       <header>
         <div className="header">
-          <h1>Owen Wilson's 'wow'</h1>
+          <h1 className="title">Owen Wilson's 'wow'</h1>
         </div>
       </header>
 
