@@ -1,14 +1,18 @@
 * {
   margin: 0;
-  padding: 0;
+  padding: 0;  
 }
 .header {
   color: green;
-  border-bottom: 2px solid gray;
+  border-bottom: 2px solid green;
   text-align: center;
   margin-bottom: 30px;
+  background-color: lightslategrey;
 }
 
+body {
+  background-color: lightslategrey;
+}
 .ul {
   display: flex;
   flex-wrap: wrap;
@@ -150,3 +154,4 @@
     margin: 50px;    
   }
 }
+
