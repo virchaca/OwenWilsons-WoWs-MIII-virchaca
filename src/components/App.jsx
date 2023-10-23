@@ -76,7 +76,12 @@ function App() {
   keepSceneDetailInfo();
 
   // const movieData = movies.find((movie) => movie.id === movieId); /*esto lo he comentado para hacer el if para trabajar con movieData*/
-
+  
+  const sortedMovies = [...filteredMovies].sort((a, b) => {
+    return a.name.localeCompare(b.name);
+  });  
+  // clono filteredMovies en 'sortedMovies' y los ordeno por orden alfabético y paso sortedMovies por props MovieSceneList.
+  
   return (
     <>
       <header>
@@ -105,7 +110,7 @@ function App() {
                     coincida con la palabra '{nameFiltered}'
                   </p>
                 ) : (
-                  <MovieSceneList movies={filteredMovies} />
+                  <MovieSceneList movies={sortedMovies} />
                 )}
               </>
             }
