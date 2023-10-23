@@ -1,6 +1,6 @@
 // import TextFilter from "./TextFilter";
 // import YearFilter from "./YearFilter";
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 const Filters = ({
   yearFilter,
@@ -23,9 +23,12 @@ const Filters = ({
   const handleSelect = (ev) => {
     handleChangeYear(ev.target.value);
   };
+  const handleForm = (ev) => {
+    ev.preventDefault();
+  }
   return (
     <div className="divForm">
-      <form className="formContainer">
+      <form className="formContainer" onSubmit={handleForm}>
         <div className="inputContainer">
           <label htmlFor="search_name">Movie </label>
           <input
@@ -55,8 +58,12 @@ const Filters = ({
   );
 };
 
-// Filters.propTypes = {
-//   nameFiltered: PropTypes.string,
-// }
+Filters.propTypes = {  
+  yearFilter: PropTypes.string,
+  handleChangeYear: PropTypes.func,
+  nameFiltered: PropTypes.string,
+  handleChangeInput: PropTypes.func,
+  moviesYears: PropTypes.array,
+}
 
 export default Filters;

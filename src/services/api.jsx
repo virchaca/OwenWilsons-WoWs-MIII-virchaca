@@ -16,6 +16,7 @@ const getDataFromAPI = () => {
             year: movie.year,
             phrase: movie.full_line,
             audio: movie.audio,
+            director: movie.director,
           };
         });
         return cleanData;

@@ -1,5 +1,8 @@
 
-
+* {
+    margin: 0;
+    padding: 0;
+}
 .header {
     color: green;
     border-bottom: 2px solid gray;
@@ -16,7 +19,7 @@
 
 .li{
     border: 2px solid rgb(127, 196, 18);
-    width: 250px;
+    width: 220px;
     background-color: rgb(29, 100, 100);
     text-align: center;
     border-radius: 25px;
@@ -36,21 +39,22 @@
     display: flex;
     align-items: center; 
     text-decoration: none;
-    color: rgb(194, 150, 150);
+    color: rgb(104, 7, 7);;
     flex-grow: 1;
     display: flex;
     justify-content: center; 
 }
 .phrase {  
-    color: rgb(104, 7, 7);
+    color:  rgb(194, 150, 150);
     flex-grow: 1;
     display: flex;
     justify-content: center;
+    font-weight: bold;
+    padding-block: 10px;
 }
 
 .divForm {
-    text-align: center;
-    margin-top: 10px;
+    text-align: center;    
     color: green;
    
    }
@@ -65,12 +69,14 @@
     font-weight: bold;
   }
   .inputContainer input, select {
-    margin: 10px;
+    margin-inline: 10px;
+    margin-bottom: 10px;
   }
   
 
 .detailDiv {
-    display: flex;  
+    display: grid;  
+    grid-template-columns: 1fr 1fr;
     padding-inline: 20px;
     padding-block: 10px;
     width: 500px;
@@ -79,15 +85,14 @@
     margin: 0 auto; 
     align-items: center;   
 }
-
 .detailImg{
     height: 380px;
-
 }
 .detailSection {
 display: flex;
 flex-direction: column;
 text-align: center;
+justify-content: center;
     .detailNameDiv{
         color: white; 
         font-size: 40px;
@@ -95,14 +100,28 @@ text-align: center;
     .audio{
         color: white; 
         margin-bottom: 10px;
+        font-weight: bold;
+    }
+    .detailDirector{
+        font-size: 30px;
+    color: gray;
+    }
+    .detailPhrase {      
+        font-size: 30px;
+        color: gray;
+    }
+    .back{
+        color: black;
+        text-decoration: none;
     }
 }
-.detailPhrase {      
+
+.mensaje {
+    color: green;
+    text-align: center;
+    margin: 200px;
     font-size: 30px;
-    color: gray;
+    background-color: rgb(243, 213, 213);
 }
-.back{
-    color: black;
-    text-decoration: none;
-}
+
 

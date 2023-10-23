@@ -16,6 +16,7 @@ const MovieSceneDetail = ({ movie }) => {
         <section className="detailSection">
           <p className="detailNameDiv">{movie.name}</p>
           <p className="detailPhrase">{movie.phrase}</p>
+          <p className="detailDirector">Director:{movie.director}</p>
           <a href={movie.audio} className="audio" target="blank">Escuchar audio</a>
           <Link to="/" className="back">← Back</Link>
         </section>
@@ -25,6 +26,6 @@ const MovieSceneDetail = ({ movie }) => {
 };
 
 MovieSceneDetail.propTypes = {
-  movie: PropTypes.object.isRequired,
+  movie: PropTypes.object,
 };
 export default MovieSceneDetail;

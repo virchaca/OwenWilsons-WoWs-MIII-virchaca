@@ -1,7 +1,8 @@
+/* eslint-disable react/no-unescaped-entities */
 // import viteLogo from '/vite.svg'
 import "../styles/App.scss";
-// import ls from './services/localStorage';
-import { Route, Routes, Link } from "react-router-dom";
+import ls from "../services/localStorage";
+import { Route, Routes } from "react-router-dom";
 import { useLocation, matchPath } from "react-router";
 import MovieSceneList from "./MovieSceneList";
 import Filters from "./Filters";
@@ -12,13 +13,19 @@ import MovieSceneDetail from "./MovieSceneDetail";
 function App() {
   const [movies, setMovies] = useState([]);
   const [yearFilter, setYearFilter] = useState("");
-  const [nameFiltered, setNameFiltered] = useState("");
+  const [nameFiltered, setNameFiltered] = useState(ls.get("search", ""));
+
 
   useEffect(() => {
     getDataFromApi().then((cleanData) => {
       setMovies(cleanData);
     });
   }, []);
+
+  useEffect(() => {
+    ls.set("search", nameFiltered);
+  }, [nameFiltered]);
+
   const handleChangeYear = (value) => {
     setYearFilter(parseInt(value));
   };
@@ -28,7 +35,9 @@ function App() {
   };
 
   const filteredMovies = movies
-    .filter((movie) => movie.phrase.toLowerCase().includes(nameFiltered))
+    .filter((movie) =>
+      movie.phrase.toLowerCase().includes(nameFiltered.toLowerCase())
+    )
     .filter((movie) => {
       if (yearFilter === "") {
         return true;
@@ -53,7 +62,7 @@ function App() {
     <>
       <header>
         <div className="header">
-        <h1>Owen Wilson's 'wow'</h1>
+          <h1>Owen Wilson's 'wow'</h1>
         </div>
       </header>
 
@@ -70,7 +79,14 @@ function App() {
                   nameFiltered={nameFiltered}
                   moviesYears={getMoviesYears()}
                 />
-                <MovieSceneList movies={filteredMovies} />
+                {filteredMovies.length === 0 ? (
+                  <p className="mensaje">
+                    No hay ninguna película que tenga una escena que coincida
+                    con la palabra '{nameFiltered}'
+                  </p>
+                ) : (
+                  <MovieSceneList movies={filteredMovies} />
+                )}
               </>
             }
           />
@@ -78,8 +94,7 @@ function App() {
             path="/movie/:id"
             element={
               <>
-                <MovieSceneDetail  movie={movieData}/>
-                {/* <Link to="/">Back</Link> */}
+                <MovieSceneDetail movie={movieData} />
               </>
             }
           />
