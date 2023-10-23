@@ -44,7 +44,7 @@ function App() {
 
   const filteredMovies = movies
     .filter((movie) =>
-      movie.phrase.toLowerCase().includes(nameFiltered.toLowerCase())
+      movie.phrase.toLowerCase().includes(nameFiltered.toLowerCase()) || movie.name.toLowerCase().includes(nameFiltered.toLowerCase()) 
     )
     .filter((movie) => {
       if (yearFilter === "") {
@@ -94,7 +94,7 @@ function App() {
                 />
                 {filteredMovies.length === 0 ? (
                   <p className="mensaje">
-                    No hay ninguna película que tenga una escena que coincida
+                    No hay ninguna película que tenga una escena o título que coincida
                     con la palabra '{nameFiltered}'
                   </p>
                 ) : (

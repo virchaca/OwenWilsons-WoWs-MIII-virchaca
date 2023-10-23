@@ -92,7 +92,7 @@
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
     width: 80%;
-    height: 650px;
+    height: auto;
   }
   .detailImg {
     height: 380px;
@@ -108,6 +108,9 @@
     .detailNameDiv {
       color: white;
       font-size: 40px;
+      @media screen and (max-width: 420px) {
+        font-size: 30px;       
+      }
     }
     .audio {
       color: white;
@@ -117,10 +120,16 @@
     .detailDirector {
       font-size: 30px;
       color: gray;
+      @media screen and (max-width: 420px) {
+        font-size: 20px;       
+      }
     }
     .detailPhrase {
       font-size: 30px;
       color: gray;
+      @media screen and (max-width: 420px) {
+        font-size: 20px;       
+      }
     }
     .back {
       color: black;
@@ -133,10 +142,11 @@
   color: green;
   text-align: center;
   margin: 200px;
-  font-size: 30px;
+  font-size: 20px;
+  padding: 10px;
   background-color: rgb(243, 213, 213);
   @media screen and (max-width: 420px) {
     font-size: 12px;
-    margin: 50px;
+    margin: 50px;    
   }
 }
