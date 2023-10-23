@@ -9,7 +9,7 @@ const MovieSceneList = ({ movies }) => {
   const renderMovies = movies.map((movie) => {
     return (
       <Link to={"/movie/" + movie.id} className="linkMovie" key={movie.id}>
-        <li className="li" key={movie.id}>
+        <li className="li">
           <MovieSceneItem movie={movie} />
         </li>
       </Link>

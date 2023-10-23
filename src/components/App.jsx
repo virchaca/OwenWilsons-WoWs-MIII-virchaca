@@ -4,34 +4,42 @@ import "../styles/App.scss";
 import ls from "../services/localStorage";
 import { Route, Routes } from "react-router-dom";
 import { useLocation, matchPath } from "react-router";
+import { useEffect, useState } from "react";
+
+import getDataFromApi from "../services/api";
 import MovieSceneList from "./MovieSceneList";
 import Filters from "./Filters";
-import { useEffect, useState } from "react";
-import getDataFromApi from "../services/api";
 import MovieSceneDetail from "./MovieSceneDetail";
 
 function App() {
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState(ls.get("allMoviesList", []));
   const [yearFilter, setYearFilter] = useState("");
-  const [nameFiltered, setNameFiltered] = useState(ls.get("search", ""));
-
+  const [nameFiltered, setNameFiltered] = useState("");
+  const [movieData, setMovieData] = useState(
+    ls.get("movieData", null)
+  ); /*cambio movieData de constante a variable Estado para guardar la info de MovieSceneDetail */
 
   useEffect(() => {
     getDataFromApi().then((cleanData) => {
       setMovies(cleanData);
+      ls.set("allMoviesList", cleanData);
+      //mejor poner cleanData que movies, porque react es asincrono y queremos que nos guarde lo que llega con la respuesta del fetch
     });
   }, []);
 
-  useEffect(() => {
-    ls.set("search", nameFiltered);
-  }, [nameFiltered]);
-
   const handleChangeYear = (value) => {
-    setYearFilter(parseInt(value));
+    setYearFilter(value);
   };
 
   const handleChangeInput = (value) => {
     setNameFiltered(value);
+  };
+
+  const getMoviesYears = () => {
+    const moviesYears = movies.map((movie) => movie.year);
+    const uniqueYear = new Set(moviesYears);
+    const uniqueYearsArray = [...uniqueYear];
+    return uniqueYearsArray;
   };
 
   const filteredMovies = movies
@@ -42,21 +50,26 @@ function App() {
       if (yearFilter === "") {
         return true;
       } else {
-        return yearFilter === movie.year;
+        return parseInt(yearFilter) === movie.year;
       }
     });
-
-  const getMoviesYears = () => {
-    const moviesYears = movies.map((movie) => movie.year);
-    const uniqueYear = new Set(moviesYears);
-    const uniqueYearsArray = [...uniqueYear];
-    return uniqueYearsArray;
-  };
 
   const { pathname } = useLocation();
   const routeData = matchPath("/movie/:id", pathname);
   const movieId = routeData !== null ? routeData.params.id : "";
-  const movieData = movies.find((movie) => movie.id === movieId);
+  const keepSceneDetailInfo = () => {
+    if (movieData === null || movieData.id !== movieId) {
+      const foundMovie = movies.find((movie) => movie.id === movieId);
+      if (foundMovie) {
+        setMovieData(foundMovie);
+        ls.set("movieData", foundMovie);
+      }
+    }
+    // Si movieData no esta en ls, está vacío, o no coindice con la peli que tiene ese movieId, entonces buscame la peli que SI coincide con movieId, que ahora será movieData, y guardamela en el ls
+  };
+  keepSceneDetailInfo();
+
+  // const movieData = movies.find((movie) => movie.id === movieId); /*esto lo he comentado para hacer el if para trabajar con movieData*/
 
   return (
     <>
@@ -105,3 +118,8 @@ function App() {
 }
 
 export default App;
+// element={
+//   <>
+//     <MovieSceneDetail movie={movieData} />
+//   </>
+// }
