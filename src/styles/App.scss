@@ -1,127 +1,142 @@
-
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 .header {
-    color: green;
-    border-bottom: 2px solid gray;
-    text-align: center;
-    margin-bottom: 30px;
+  color: green;
+  border-bottom: 2px solid gray;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
-
-.img {
+.ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  justify-content: center;
+  .img {
     width: 95%;
     border-radius: 25px;
-    padding: 5px;   
-}
-
-.li{
+    padding: 5px;
+  }
+  .li {
     border: 2px solid rgb(127, 196, 18);
     width: 220px;
     background-color: rgb(29, 100, 100);
     text-align: center;
     border-radius: 25px;
-}
-
-.ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    list-style: none;     
-    justify-content: center;  
-}
-.linkMovie {
+  }
+  .linkMovie {
     text-decoration: none;
-}
-.nameDiv{
+  }
+  .nameDiv {
     display: flex;
-    align-items: center; 
+    align-items: center;
     text-decoration: none;
-    color: rgb(104, 7, 7);;
+    color: rgb(104, 7, 7);
     flex-grow: 1;
     display: flex;
-    justify-content: center; 
-}
-.phrase {  
-    color:  rgb(194, 150, 150);
+    justify-content: center;
+  }
+  .phrase {
+    color: rgb(194, 150, 150);
     flex-grow: 1;
     display: flex;
     justify-content: center;
     font-weight: bold;
     padding-block: 10px;
+  }
 }
 
 .divForm {
-    text-align: center;    
-    color: green;
-   
-   }
-   .formContainer {
+  text-align: center;
+  color: green;
+  .formContainer {
     display: flex;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
+    @media screen and (max-width: 420px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
   }
-  
+
   .inputContainer {
-    margin-right: 20px; 
+    margin-right: 20px;
     font-weight: bold;
   }
-  .inputContainer input, select {
+  .inputContainer input,
+  select {
     margin-inline: 10px;
     margin-bottom: 10px;
   }
-  
+}
 
 .detailDiv {
-    display: grid;  
-    grid-template-columns: 1fr 1fr;
-    padding-inline: 20px;
-    padding-block: 10px;
-    width: 500px;
-    height: 400px;
-    background-color: rgb(94, 48, 94);
-    margin: 0 auto; 
-    align-items: center;   
-}
-.detailImg{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-inline: 20px;
+  padding-block: 10px;
+  width: 500px;
+  height: 400px;
+  background-color: rgb(94, 48, 94);
+  margin: 0 auto;
+  align-items: center;
+  @media screen and (max-width: 420px) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 80%;
+    height: 650px;
+  }
+  .detailImg {
     height: 380px;
-}
-.detailSection {
-display: flex;
-flex-direction: column;
-text-align: center;
-justify-content: center;
-    .detailNameDiv{
-        color: white; 
-        font-size: 40px;
+    @media screen and (max-width: 420px) {
+        margin: 0 auto;       
+      }
+  }
+  .detailSection {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    .detailNameDiv {
+      color: white;
+      font-size: 40px;
     }
-    .audio{
-        color: white; 
-        margin-bottom: 10px;
-        font-weight: bold;
+    .audio {
+      color: white;
+      margin-bottom: 10px;
+      font-weight: bold;
     }
-    .detailDirector{
-        font-size: 30px;
-    color: gray;
+    .detailDirector {
+      font-size: 30px;
+      color: gray;
     }
-    .detailPhrase {      
-        font-size: 30px;
-        color: gray;
+    .detailPhrase {
+      font-size: 30px;
+      color: gray;
     }
-    .back{
-        color: black;
-        text-decoration: none;
+    .back {
+      color: black;
+      text-decoration: none;
     }
+  }
 }
 
 .mensaje {
-    color: green;
-    text-align: center;
-    margin: 200px;
-    font-size: 30px;
-    background-color: rgb(243, 213, 213);
+  color: green;
+  text-align: center;
+  margin: 200px;
+  font-size: 30px;
+  background-color: rgb(243, 213, 213);
+  @media screen and (max-width: 420px) {
+    font-size: 12px;
+    margin: 50px;
+  }
 }
-
-
