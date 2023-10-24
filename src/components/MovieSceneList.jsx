@@ -9,7 +9,7 @@ const MovieSceneList = ({ movies }) => {
   const renderMovies = movies.map((movie) => {
     return (
       <Link to={"/movie/" + movie.id} className="linkMovie" key={movie.id}>
-        <li className="li">
+        <li className="liMovies">
           <MovieSceneItem movie={movie} />
         </li>
       </Link>
@@ -17,7 +17,7 @@ const MovieSceneList = ({ movies }) => {
   });
   return (
     <>
-      <ul className="ul">{renderMovies}</ul>
+      <ul className="ulMovies">{renderMovies}</ul>
     </>
   );
 };

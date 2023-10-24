@@ -2,10 +2,12 @@
   margin: 0;
   padding: 0;
 }
+
 body {
-  background-color: black;
+  // background-color: rgb(1, 10, 1)
+  background: linear-gradient(black, rgb(26, 7, 26), rgb(31, 4, 4));
 }
-.header {
+.headerMovies {
   margin-top: 20px;
   color: rgb(111, 111, 148);
   border-bottom: 2px solid rgb(104, 7, 7);
@@ -16,34 +18,34 @@ body {
   height: 100px;
   padding-top: 60px;
   background-size: cover;
-  .title {
+  .titleHeaderMovies {
     background-color: black;
     width: fit-content;
     margin: 0 auto;
   }
 }
 
-.ul {
+.ulMovies {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
   justify-content: center;
 
-  .li {
+  .liMovies {
     border: 2px solid rgb(104, 7, 7);
     width: 220px;
     background-color: rgb(49, 14, 70);
     // background-color: rgb(94, 48, 94);
     background-color: rgb(10, 37, 10);
     text-align: center;
-    border-radius: 25px;
+    border-radius: 10px;
     margin: 30px;
     @media screen and (max-width: 420px) {
       margin: 15px;
     }
-    .img {
+    .imgListMovies {
       width: 95%;
-      border-radius: 25px;
+      border-radius: 10px;
       padding: 5px;
     }
     .nameDiv {
@@ -55,7 +57,7 @@ body {
       display: flex;
       justify-content: center;
     }
-    .phrase {
+    .phraseMovies {
       color: rgb(194, 150, 150);
       flex-grow: 1;
       display: flex;
@@ -141,16 +143,16 @@ body {
         font-size: 30px;
       }
     }
-    .audio {
+    .detailAudio {
       color: white;
       margin-bottom: 10px;
       font-weight: bold;
     }
     .detailDirector {
-      font-size: 30px;
+      font-size: 25px;
       color: darkslategrey;
       @media screen and (max-width: 420px) {
-        font-size: 20px;
+        font-size: 20px;        
       }
     }
     .detailPhrase {
@@ -161,15 +163,15 @@ body {
         font-size: 20px;
       }
     }
-    .back {
+    .detailBack {
       color: black;
       text-decoration: none;
     }
   }
 }
 
-.mensaje {
-  color: green;
+.mensajeMovies {
+  color: rgb(10, 43, 10);
   text-align: center;
   margin: 200px;
   font-size: 20px;

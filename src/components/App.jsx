@@ -1,5 +1,4 @@
 /* eslint-disable react/no-unescaped-entities */
-// import viteLogo from '/vite.svg'
 import "../styles/App.scss";
 import ls from "../services/localStorage";
 import { Route, Routes } from "react-router-dom";
@@ -57,7 +56,7 @@ function App() {
         return true;
       } else {
         return parseInt(yearFilter) === movie.year;
-      }
+      }/*poner el parseInt aqui porque si lo pongo antes no me reconoce las "" vacias*/
     });
 
   const { pathname } = useLocation();
@@ -85,8 +84,8 @@ function App() {
   return (
     <>
       <header>
-        <div className="header">
-          <h1 className="title">Owen Wilson's 'wow'</h1>
+        <div className="headerMovies">
+          <h1 className="titleHeaderMovies">Owen Wilson's 'wow'</h1>
         </div>
       </header>
 
@@ -105,7 +104,7 @@ function App() {
                 />
                 <Loading isLoading={isLoading} />
                 {filteredMovies.length === 0 ? (
-                  <p className="mensaje">
+                  <p className="mensajeMovies">
                     No hay ninguna película que tenga una escena o título que
                     coincida con la palabra '{nameFiltered}'
                   </p>
@@ -130,8 +129,4 @@ function App() {
 }
 
 export default App;
-// element={
-//   <>
-//     <MovieSceneDetail movie={movieData} />
-//   </>
-// }
+

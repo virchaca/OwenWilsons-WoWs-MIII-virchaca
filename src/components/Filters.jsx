@@ -8,6 +8,7 @@ const Filters = ({
   nameFiltered,
   handleChangeInput,
   moviesYears,
+  
 }) => {
   const handleInput = (ev) => {
     handleChangeInput(ev.target.value);
@@ -52,7 +53,7 @@ const Filters = ({
               {renderYears()}
             </select>
           </label>
-        </div>
+        </div>    
       </form>
     </div>
   );

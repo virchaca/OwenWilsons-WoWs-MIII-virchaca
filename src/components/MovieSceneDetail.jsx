@@ -17,10 +17,10 @@ const MovieSceneDetail = ({ movie }) => {
           <p className="detailNameDiv"><i className="fa-solid fa-film detailMovieIcon"> </i> {movie.name}</p>
           <p className="detailPhrase">{movie.phrase}</p>
           <p className="detailDirector">Director:{movie.director}</p>
-          <a href={movie.audio} className="audio" target="blank">
+          <a href={movie.audio} className="detailAudio " target="blank">
             <br/>
           <i className="fa-solid fa-music">  -</i> Escuchar audio</a>
-          <Link to="/" className="back"><i className="fa-solid fa-left-long"></i> Back</Link>          
+          <Link to="/" className="detailBack"><i className="fa-solid fa-left-long"></i> Back</Link>          
         </section>
       </div>
     </>
