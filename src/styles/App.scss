@@ -5,7 +5,9 @@
 
 body {
   // background-color: rgb(1, 10, 1)
-  background: linear-gradient(black, rgb(26, 7, 26), rgb(31, 4, 4));
+  // background: linear-gradient(black, rgb(26, 7, 26), rgb(31, 4, 4));
+  background-image: url(../images/5.png);
+  // background-size: 40%;
 }
 .headerMovies {
   margin-top: 20px;
@@ -34,9 +36,10 @@ body {
   .liMovies {
     border: 2px solid rgb(104, 7, 7);
     width: 220px;
-    background-color: rgb(49, 14, 70);
+    // background-color: rgb(49, 14, 70);
     // background-color: rgb(94, 48, 94);
-    background-color: rgb(10, 37, 10);
+    // background-color: rgb(10, 37, 10);
+    background-color: black;
     text-align: center;
     border-radius: 10px;
     margin: 30px;
@@ -79,6 +82,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    
 
     @media screen and (max-width: 420px) {
       display: flex;
@@ -95,6 +99,7 @@ body {
       border: 1px solid rgb(104, 7, 7);
       padding: 10px;
       margin-bottom: 20px;
+      background-color: black;
     }
     
     .inputContainer input,
