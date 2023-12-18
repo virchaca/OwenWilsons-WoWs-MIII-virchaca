@@ -11,20 +11,54 @@ body {
 }
 .headerMovies {
   margin-top: 20px;
-  color: rgb(111, 111, 148);
+  color: rgb(104, 7, 7);
   border-bottom: 2px solid rgb(104, 7, 7);
   margin-bottom: 30px;
   background-image: url(../images/back.png);
   background-repeat: no-repeat;
   background-position: center;
   height: 100px;
-  padding-top: 60px;
+  padding-top: 10px;
+  padding-bottom: 40px;
   background-size: cover;
+  @media screen and (max-width: 420px) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 15px;
+    justify-content: center;
+    
+  }
+  .mybrand{
+    background-color: black;
+    color: rgb(104, 7, 7);
+    color: gray;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: 10px;
+    border: 1px solid;   
+    text-align: right;
+    width: fit-content;  
+    @media screen and (max-width: 420px) {
+      margin-left: auto;
+      margin-right: auto;
+      
+    }
+    .icons{
+      color: gray;
+      margin-inline: 5px;
+    }
+  }
   .titleHeaderMovies {
     background-color: black;
+    border: 3px solid rgb(104, 7, 7);
+    outline: 5px solid black;
     width: fit-content;
     margin: 0 auto;
+    margin-top: 20px;
   }
+  
 }
 
 .ulMovies {
@@ -35,16 +69,14 @@ body {
 
   .liMovies {
     border: 2px solid rgb(104, 7, 7);
-    width: 220px;
-    // background-color: rgb(49, 14, 70);
-    // background-color: rgb(94, 48, 94);
-    // background-color: rgb(10, 37, 10);
+    width: 180px; 
     background-color: black;
     text-align: center;
     border-radius: 10px;
     margin: 30px;
     @media screen and (max-width: 420px) {
       margin: 15px;
+      width: 150px;
     }
     .imgListMovies {
       width: 95%;
@@ -77,6 +109,22 @@ body {
 .divForm {
   text-align: center;
   color: rgb(104, 7, 7);
+  border: 1px solid;
+  border-inline: 0px solid;
+  align-items: center;
+  @media screen and (max-width: 420px) {
+    display: flex;
+   flex-direction: column;
+  }
+  .pForm{
+    padding: 5px;
+    background-color: black;
+    width: fit-content;
+    margin: auto;
+    border: 1px solid;
+    margin-block: 15px;
+  }
+  
 
   .formContainer {
     display: flex;
@@ -88,7 +136,7 @@ body {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: flex-end;
+      align-items: center;
       padding: 10px;
       margin-bottom: 10px;
     }

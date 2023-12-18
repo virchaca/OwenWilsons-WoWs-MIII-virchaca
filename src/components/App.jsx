@@ -56,7 +56,7 @@ function App() {
         return true;
       } else {
         return parseInt(yearFilter) === movie.year;
-      }/*poner el parseInt aqui porque si lo pongo antes no me reconoce las "" vacias*/
+      } /*poner el parseInt aqui porque si lo pongo antes no me reconoce las "" vacias*/
     });
 
   const { pathname } = useLocation();
@@ -75,17 +75,30 @@ function App() {
   keepSceneDetailInfo();
 
   // const movieData = movies.find((movie) => movie.id === movieId); /*esto lo he comentado para hacer el if para trabajar con movieData*/
-  
+
   const sortedMovies = [...filteredMovies].sort((a, b) => {
     return a.name.localeCompare(b.name);
-  });  
+  });
   // clono filteredMovies en 'sortedMovies' y los ordeno por orden alfabético y paso sortedMovies por props MovieSceneList.
-  
+
   return (
     <>
       <header>
         <div className="headerMovies">
+        <p className="mybrand">
+            <a
+              href="https://www.linkedin.com/in/virginia-alvarezperez/"
+              target="blank"
+            >
+              <i className="icons fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/virchaca" target="blank">
+              <i className="icons fa-brands fa-github-alt"></i>
+            </a>{" "}
+            @VirWebCreations
+          </p>
           <h1 className="titleHeaderMovies">Owen Wilson's 'wow'</h1>
+          
         </div>
       </header>
 
@@ -124,9 +137,9 @@ function App() {
           />
         </Routes>
       </main>
+      <footer></footer>
     </>
   );
 }
 
 export default App;
-

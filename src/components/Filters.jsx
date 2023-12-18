@@ -29,6 +29,7 @@ const Filters = ({
   }
   return (
     <div className="divForm">
+      <p className='pForm'>Search by movie or by year the WOW you fancy</p>
       <form className="formContainer" onSubmit={handleForm}>
         <div className="inputContainer">
           <label htmlFor="search_name">Movie </label>
