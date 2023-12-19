@@ -66,6 +66,7 @@ body {
   flex-wrap: wrap;
   list-style: none;
   justify-content: center;
+  
 
   .liMovies {
     border: 2px solid rgb(104, 7, 7);
@@ -74,12 +75,21 @@ body {
     text-align: center;
     border-radius: 10px;
     margin: 30px;
+    &:hover {     
+      background-color: rgb(104, 7, 7);
+      .phraseMovies{
+        color: black;
+      }
+      .nameDiv{
+        color: yellow;
+      }
+    }
     @media screen and (max-width: 420px) {
       margin: 15px;
       width: 120px;
     }
     .imgListMovies {
-      width: 95%;
+      width: 70%;
       border-radius: 10px;
       padding: 5px;
     }
@@ -98,11 +108,12 @@ body {
       display: flex;
       justify-content: center;
       font-weight: bold;
-      padding-block: 10px;
+      padding-block: 10px;    
     }
   }
   .linkMovie {
     text-decoration: none;
+    
   }
 }
 
@@ -164,9 +175,9 @@ body {
   padding-inline: 20px;
   padding-block: 10px;
   width: 500px;
-  height: 400px;
-  // background-color: rgb(94, 48, 94);
-  background-color: rgb(111, 111, 148);
+  height: 400px;  
+  background-color: rgba(128, 128, 128, 0.2);
+  // background-color: rgb(111, 111, 148);
   border: 5px solid rgb(104, 7, 7);
   margin: 0 auto;
   align-items: center;
@@ -179,7 +190,7 @@ body {
     margin-bottom: 20px;
   }
   .detailImg {
-    height: 380px;
+    height: 300px;
     @media screen and (max-width: 420px) {
       margin: 0 auto;
     }
@@ -217,8 +228,11 @@ body {
       }
     }
     .detailBack {
-      color: black;
+      // color: black;
+      color: rgb(104, 7, 7);
       text-decoration: none;
+      background-color: black;
+      // width: fit-content;
     }
   }
 }
